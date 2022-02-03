@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+.body {
+  background-color: black;
+  color: white;
+}
+
+.h1 {
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+}
+

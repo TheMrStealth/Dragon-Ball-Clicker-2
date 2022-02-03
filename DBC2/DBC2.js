@@ -23,7 +23,7 @@ const renderGameBaseBorders = (borderWidth) => {
 
 const {game, margin} = renderGameBaseBorders(0)
 
-game.style.backgroundImage = "url('./images/dbc2background.png')"
+game.style.backgroundImage = "url('../images/dbc2background.png')"
 game.style.backgroundSize = "cover"
 
 const Power = document.createElement("h1")
@@ -37,9 +37,11 @@ margin.style.justifyContent = "space-between"
 margin.style.alignItems = "center"
 
 const Goku = document.createElement("img")
-Goku.src = "./images/goku.png"
-Goku.height = 975
-Goku.width = 725
+Goku.src = "../images/goku.png"
+Goku.height = 625
+Goku.width = 450
+
+
 
 margin.append(Power)
 margin.append(Goku)
