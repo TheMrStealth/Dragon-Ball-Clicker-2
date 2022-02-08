@@ -41,9 +41,7 @@ Goku.src = "./DBC2images/goku.png"
 Goku.height = 625
 Goku.width = 450
 
-addEventListener("click", Goku) (
-    console.log("clicked")
-)
+
 
 margin.append(Power)
 margin.append(Goku)
