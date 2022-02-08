@@ -1,8 +1,11 @@
 const renderGameBaseBorders = (borderWidth) => {
     const body = document.getElementById("body")
-    
+    // body.style.overflow = "hidden"
+
+
     const game = document.createElement("div")
     game.style.height = "100vh"
+    game.style.width = "100%"
     game.style.margin = 0
     
     const margin = document.createElement("div")
@@ -23,29 +26,38 @@ const renderGameBaseBorders = (borderWidth) => {
 
 const {game, margin} = renderGameBaseBorders(0)
 
+margin.style.display = "flex"
+margin.style.flexDirection = "column"
+margin.style.justifyContent = "space-between"
+margin.style.alignItems = "center"
+
 game.style.backgroundImage = "url('./DBC2images/dbc2background.png')"
 game.style.backgroundSize = "cover"
 
 const Power = document.createElement("h1")
 Power.innerHTML = "Power"
 Power.style.color = "white"
+Power.style.alignSelf = "start"
+Power.style.flex ="1 1"
 
-
-margin.style.display = "flex"
-margin.style.flexDirection = "column"
-margin.style.justifyContent = "space-between"
-margin.style.alignItems = "center"
 
 const BaseGoku = document.createElement("img")
 BaseGoku.src = "./DBC2images/transformations/basegoku.png"
-BaseGoku.height = 625
-BaseGoku.width = 450
+BaseGoku.style.flex = "1 1"
+// BaseGoku.style.width =" 400px"
+
+
 
 const BaseAura = document.createElement("img")
 BaseAura.src = "./DBC2images/auras/baseaura.png"
-BaseAura.height = 625
-BaseAura.width = 450
+BaseAura.style.flex = "1 1"
+
+BaseGoku.addEventListener("click", ()=> {
+    console.log("ClickedGoku")
+})
 
 margin.append(Power)
 margin.append(BaseGoku)
 margin.append(BaseAura)
+
+BaseGoku.style.width = "32%"
