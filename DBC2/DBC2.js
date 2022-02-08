@@ -36,12 +36,16 @@ margin.style.flexDirection = "column"
 margin.style.justifyContent = "space-between"
 margin.style.alignItems = "center"
 
-const Goku = document.createElement("img")
-Goku.src = "./DBC2images/goku.png"
-Goku.height = 625
-Goku.width = 450
+const BaseGoku = document.createElement("img")
+BaseGoku.src = "./DBC2images/transformations/basegoku.png"
+BaseGoku.height = 625
+BaseGoku.width = 450
 
-
+const BaseAura = document.createElement("img")
+BaseAura.src = "./DBC2images/auras/baseaura.png"
+BaseAura.height = 625
+BaseAura.width = 450
 
 margin.append(Power)
-margin.append(Goku)
+margin.append(BaseGoku)
+margin.append(BaseAura)
