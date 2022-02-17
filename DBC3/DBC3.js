@@ -32,7 +32,7 @@ margin.style.flexDirection = "column"
 margin.style.justifyContent = "space-between"
 margin.style.alignItems = "center"
 
-game.style.backgroundImage = "url('./DBC2images/dbc2background.png')"
+game.style.backgroundImage = "url('./DBC2images/dbc3background.png')"
 game.style.backgroundSize = "cover"
 
 const Power = document.createElement("h1")
