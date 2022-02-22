@@ -41,26 +41,42 @@ Power.style.color = "white"
 Power.style.alignSelf = "start"
 Power.style.flex ="1 1"
 
+
+const character = document.createElement("div")
+character.style.zIndex = "0"
+character.style.position = "absolute"
+character.style.bottom = "0%"
+character.style.left = "29.5%"
+// character.style.width = "800px"
+// character.style.height = "800px"
+
+const innercharacter = document.createElement("div")
+innercharacter.style.position = "absolute"
+innercharacter.style.bottom = "6%"
+innercharacter.style.left = "11%"
+
 const BaseAura = document.createElement("img")
 BaseAura.src = "./DBC2images/auras/baseaura.png"
-BaseAura.style.flex = "1 1"
-BaseAura.style.position ="relative"
+BaseAura.style.width = "75vh"
+BaseAura.style.height = "95vh"
 
 BaseAura.style.visibility = false
 
 const BaseGoku = document.createElement("img")
 BaseGoku.src = "./DBC2images/transformations/basegoku.png"
-BaseGoku.style.flex = "1 1"
-// BaseGoku.style.width =" 400px"
-
+BaseGoku.style.width = "65vh"
+BaseGoku.style.height = "85vh"
 
 
 
 const ShowAura = ()=>{
     console.log("ClickedGoku")
-    // BaseAura.style.visibility = true;
-    
-    // BaseAura.style.visibility = false;
+    BaseAura.style.visibility = "visible";
+
+    setTimeout(() => {
+        BaseAura.style.visibility = "hidden";
+    }, 500);
+
 }
 
 
@@ -68,9 +84,11 @@ BaseGoku.addEventListener("click", ShowAura)
 
 margin.append(Power)
 
-margin.append(BaseGoku)
-margin.append(BaseAura)
+innercharacter.append(BaseGoku)
+character.append(BaseAura)
+margin.append(character)
+character.append(innercharacter)
 
 
-BaseAura.style.width = "52%"
-BaseGoku.style.width = "32%"
+// BaseAura.style.width = "52%"
+// BaseGoku.style.width = "32%"
