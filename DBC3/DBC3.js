@@ -59,6 +59,7 @@ const BaseAura = document.createElement("img")
 BaseAura.src = "./DBC2images/auras/baseaura.png"
 BaseAura.style.width = "75vh"
 BaseAura.style.height = "95vh"
+BaseAura.style.visibility = "hidden"
 
 BaseAura.style.visibility = false
 
