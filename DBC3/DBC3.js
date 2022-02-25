@@ -76,7 +76,7 @@ const ShowAura = ()=>{
 
     setTimeout(() => {
         BaseAura.style.visibility = "hidden";
-    }, 500);
+    }, 100);
 
 }
 
