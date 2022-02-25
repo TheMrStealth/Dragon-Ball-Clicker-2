@@ -1,32 +1,3 @@
-const renderGameBaseBorders = (borderWidth) => {
-    const body = document.getElementById("body")
-    // body.style.overflow = "hidden"
-
-
-    const game = document.createElement("div")
-    game.style.height = "100vh"
-    game.style.width = "100%"
-    game.style.margin = 0
-    
-    const margin = document.createElement("div")
-    if(borderWidth){
-        margin.style.borderStyle = "solid"
-        margin.style.borderWidth = `${borderWidth}px`
-    }
-    
-    game.append(margin)
-    body.append(game)
-
-    if(borderWidth){
-        margin.style.height = `${game.clientHeight - (borderWidth*2)}px`
-    }
-
-    return {game, margin}
-}
-
-
-const {game, margin} = renderGameBaseBorders(0)
-
 margin.style.display = "flex"
 margin.style.flexDirection = "column"
 margin.style.justifyContent = "space-between"
@@ -35,12 +6,27 @@ margin.style.alignItems = "center"
 game.style.backgroundImage = "url('./DBC2images/dbc3background.png')"
 game.style.backgroundSize = "cover"
 
-const Power = document.createElement("h1")
-Power.innerHTML = "Power:"
-Power.style.color = "white"
-Power.style.alignSelf = "start"
-Power.style.flex ="1 1"
+let Power = 0
 
+const PowerText = document.createElement("h1")
+PowerText.innerHTML = "Power: "
+PowerText.style.color = "white"
+PowerText.style.flex ="1 1"
+
+const PowerTextNumber = document.createElement("h1")
+PowerTextNumber.innerHTML = Power
+PowerTextNumber.style.color = "white"
+PowerTextNumber.style.flex ="1 1"
+// PowerTextNumber.style.left = "1%"
+
+const PowerDiv = document.createElement("div")
+PowerDiv.style.alignSelf = "start"
+PowerDiv.style.display = "flex"
+PowerDiv.style.flex = "1 1"
+PowerDiv.style.width = "18vh"
+
+PowerDiv.append(PowerText)
+PowerDiv.append(PowerTextNumber)
 
 const character = document.createElement("div")
 character.style.zIndex = "0"
@@ -71,7 +57,12 @@ BaseGoku.style.height = "85vh"
 
 
 const ShowAura = ()=>{
-    console.log("ClickedGoku")
+    Power++
+    PowerTextNumber.innerHTML = Power
+    if (Power > 249) {
+        BaseGoku.src = "./DBC2images/transformations/gokugreatape.png"
+        console.log("GoGreatApe")
+    }
     BaseAura.style.visibility = "visible";
 
     setTimeout(() => {
@@ -83,7 +74,7 @@ const ShowAura = ()=>{
 
 BaseGoku.addEventListener("click", ShowAura)
 
-margin.append(Power)
+margin.append(PowerDiv)
 
 innercharacter.append(BaseGoku)
 character.append(BaseAura)
