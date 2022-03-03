@@ -54,7 +54,9 @@ BaseGoku.src = "./DBC2images/transformations/basegoku.png"
 BaseGoku.style.width = "65vh"
 BaseGoku.style.height = "85vh"
 
-
+const UpgradeButton = document.createElement("img")
+UpgradeButton.src ="./DBC2images/buttons/UpgradeButton.png"
+UpgradeButton.style.width = "30vh"
 
 const ShowAura = ()=>{
     Power++
@@ -80,6 +82,7 @@ innercharacter.append(BaseGoku)
 character.append(BaseAura)
 margin.append(character)
 character.append(innercharacter)
+margin.append(UpgradeButton)
 
 
 // BaseAura.style.width = "52%"
