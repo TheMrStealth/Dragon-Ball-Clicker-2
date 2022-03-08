@@ -56,15 +56,15 @@ BaseGoku.style.height = "85vh"
 
 const UpgradeButton = document.createElement("img")
 UpgradeButton.src ="./DBC2images/buttons/UpgradeButton.png"
+UpgradeButton.style.position = "absolute"
 UpgradeButton.style.width = "30vh"
+UpgradeButton.style.left = "89%"
+UpgradeButton.style.top = "75%"
 
 const ShowAura = ()=>{
     Power++
     PowerTextNumber.innerHTML = Power
-    if (Power > 249) {
-        BaseGoku.src = "./DBC2images/transformations/gokugreatape.png"
-        console.log("GoGreatApe")
-    }
+
     BaseAura.style.visibility = "visible";
 
     setTimeout(() => {
@@ -73,8 +73,15 @@ const ShowAura = ()=>{
 
 }
 
+const Upgrade = ()=>{
+    if (Power > 249) {
+        BaseGoku.src = "./DBC2images/transformations/gokugreatape.png"
+        console.log("GoGreatApe")
+    }
+}
 
 BaseGoku.addEventListener("click", ShowAura)
+UpgradeButton.addEventListener("click", Upgrade)
 
 margin.append(PowerDiv)
 

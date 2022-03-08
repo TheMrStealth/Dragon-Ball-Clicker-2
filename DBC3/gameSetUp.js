@@ -1,6 +1,6 @@
 const renderGameBaseBorders = (borderWidth) => {
     const body = document.getElementById("body")
-    // body.style.overflow = "hidden"
+    // body.style.overflow = "hidden"s
 
 
     const game = document.createElement("div")
