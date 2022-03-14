@@ -7,6 +7,7 @@ game.style.backgroundImage = "url('./DBC2images/dbc3background.png')"
 game.style.backgroundSize = "cover"
 
 let Power = 0
+let SBVisibility = 0
 
 const PowerText = document.createElement("h1")
 PowerText.innerHTML = "Power: "
@@ -55,29 +56,56 @@ BaseGoku.style.width = "65vh"
 BaseGoku.style.height = "85vh"
 
 const UpgradeButton = document.createElement("img")
-UpgradeButton.src ="./DBC2images/buttons/UpgradeButton.png"
+UpgradeButton.src ="./DBC2images/shopitems/ShopLogo.png"
 UpgradeButton.style.position = "absolute"
 UpgradeButton.style.width = "30vh"
 UpgradeButton.style.left = "89%"
 UpgradeButton.style.top = "75%"
 
+ShopBackground = document.createElement("img")
+ShopBackground.src = "./DBC2images/shopitems/ShopBackground.jpg"
+ShopBackground.style.position = "absolute"
+ShopBackground.style.width = "65vh"
+ShopBackground.style.height = "80vh"
+ShopBackground.style.visibility = "hidden"
+
+KaiokenIcon = document.createElement("img")
+KaiokenIcon.src = "./DBC2images/shopitems/purchasetransformations/KaiokenIcon.gif"
+KaiokenIcon.style.width = "20vh"
+KaiokenIcon.style.position = "absolute"
+KaiokenIcon.style.right = "90%"
+KaiokenIcon.style.bottom = "30%"
+
+KaiokenText = document.createElement("h1")
+KaiokenText.innerHTML = "Kaioken"
+
+
 const ShowAura = ()=>{
     Power++
     PowerTextNumber.innerHTML = Power
 
-    BaseAura.style.visibility = "visible";
+    BaseAura.style.visibility = "visible"
 
     setTimeout(() => {
-        BaseAura.style.visibility = "hidden";
+        BaseAura.style.visibility = "hidden"
     }, 100);
 
 }
 
 const Upgrade = ()=>{
-    if (Power > 249) {
-        BaseGoku.src = "./DBC2images/transformations/gokugreatape.png"
-        console.log("GoGreatApe")
+    
+    if (SBVisibility == 0) {
+        // console.log(SBVisibility)
+        ShopBackground.style.visibility = "visible"
+        SBVisibility++
+    } else {
+        ShopBackground.style.visibility = "hidden"
+        SBVisibility--
     }
+    // if (Power > 249) {
+    //     BaseGoku.src = "./DBC2images/transformations/gokugreatape.png"
+    //     console.log("GoGreatApe")
+    // }
 }
 
 BaseGoku.addEventListener("click", ShowAura)
@@ -90,6 +118,9 @@ character.append(BaseAura)
 margin.append(character)
 character.append(innercharacter)
 margin.append(UpgradeButton)
+margin.append(ShopBackground)
+margin.append(KaiokenIcon)
+margin.append(KaiokenText)
 
 
 // BaseAura.style.width = "52%"
