@@ -58,12 +58,12 @@ Goku.style.width = "65vh"
 Goku.style.height = "85vh"
 Goku.style.zIndex = "2"
 
-const UpgradeButton = document.createElement("img")
-UpgradeButton.src ="./DBC2images/shopitems/ShopLogo.png"
-UpgradeButton.style.position = "absolute"
-UpgradeButton.style.width = "30vh"
-UpgradeButton.style.left = "89%"
-UpgradeButton.style.top = "75%"
+const ShopButton = document.createElement("img")
+ShopButton.src ="./DBC2images/shopitems/ShopLogo.png"
+ShopButton.style.position = "sticky"
+ShopButton.style.width = "30vh"
+ShopButton.style.left = "100rem"
+ShopButton.style.bottom = "-3rem"
 
 
 KaiokenIcon = document.createElement("img")
@@ -139,7 +139,7 @@ const GoGreatApe = ()=>{
 }
 
 Goku.addEventListener("click", ShowAura)
-UpgradeButton.addEventListener("click", Upgrade)
+ShopButton.addEventListener("click", Upgrade)
 GreatApeButton.addEventListener("click", GoGreatApe)
 
 margin.append(PowerDiv)
@@ -148,7 +148,7 @@ innercharacter.append(Goku)
 character.append(BaseAura)
 margin.append(character)
 character.append(innercharacter)
-margin.append(UpgradeButton)
+body.append(ShopButton)
 margin.append(KaiokenIcon)
 margin.append(KaiokenText)
 margin.append(ShopBackground)
